@@ -1,0 +1,121 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-shadow: 4px 4px 40px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 4px 4px 40px 0 rgba(0, 0, 0, 0.05);
+  padding: 0;
+  height: 56px;
+  background: #fff;
+
+  .trigger {
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      color: #1890ff;
+      background-color: rgba(24, 144, 255, 0.15);
+    }
+  }
+
+  .container {
+    display: inline-block;
+    padding-right: 16px;
+
+    ul {
+      line-height: 54px !important;
+    }
+  }
+}
+
+.sider {
+  height: 100vh;
+  overflow: auto;
+
+  .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
+}
+
+.switchtheme {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 48px;
+  background-color: #fff;
+  border-top: solid 1px #f8f8f8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 16px;
+  overflow: hidden;
+  z-index: 9;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 12px;
+  }
+
+  :global {
+    .anticon {
+      min-width: 14px;
+      margin-right: 4px;
+      font-size: 14px;
+    }
+  }
+}
+
+.dark {
+  .switchtheme {
+    background-color: #000d18;
+    border-color: #001629;
+    color: #fff;
+  }
+}
+
+.light {
+  .switchtheme {
+    background-color: #ffffff;
+    border-color: #cccccc;
+  }
+}
+
+.main {
+  height: 100vh;
+  overflow: auto;
+  background: #f0f2f5;
+}
+
+.content {
+  position: relative;
+  padding: 24px;
+}
+
+.footer {
+  text-align: center;
+  padding: 24px 0 0;
+  font-size: 14px;
+}

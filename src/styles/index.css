@@ -1,0 +1,36 @@
+/* @import "~antd/dist/antd.css"; */
+
+.container-inner {
+  min-height: calc(100vh - 150px);
+  -webkit-box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
+  box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
+  position: relative;
+}
+
+.content-inner {
+  padding: 24px;
+  background: #fff;
+  min-height: calc(100vh - 150px);
+  -webkit-box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
+  box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
+  position: relative;
+}
+
+.gutter-row {
+  margin-bottom: 16px;
+}
+
+.chart label {
+  margin: 24px 0;
+  display: block;
+  font-size: 14px;
+}
+
+.chart pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 12px;
+  line-height: 2;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
