@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import AuthenticatedRoute from '@/components/Authorized/AuthenticatedRoute'
 
 import Layout from '@/views/Layout'
 import Login from '@/views/Login'
@@ -41,10 +42,10 @@ export const childRoutes = [
   }
 ]
 
-const routes = (
+const routes = ({ childProps }) => (
   <Switch>
     <Route path="/login" component={Login} />
-    <Route path="/" component={Layout} />
+    <AuthenticatedRoute path="/" component={Layout} props={childProps} />
   </Switch>
 )
 

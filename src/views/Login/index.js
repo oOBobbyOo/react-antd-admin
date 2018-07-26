@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import styles from './index.less'
-// import { signIn } from "../../actions/userAction";
+import { signIn } from '@/actions/authAction'
 import { Form, Input, Icon, Button, Row } from 'antd'
 const FormItem = Form.Item
 
@@ -14,8 +14,8 @@ class LoginForm extends Component {
         console.log('Received values of form: ', values)
 
         //TODO 登录
-        // this.props.signIn(values);
-        // this.props.history.push("/");
+        this.props.signIn()
+        this.props.history.push('/')
       }
     })
   }
@@ -81,4 +81,13 @@ class LoginForm extends Component {
 
 const Login = Form.create()(LoginForm)
 
-export default withRouter(connect()(Login))
+const mapStateToProps = state => ({
+  isAuthenticated: state.authReducer.isAuthenticated
+})
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { signIn }
+  )(Login)
+)
