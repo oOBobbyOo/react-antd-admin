@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class User extends Component {
   render() {
@@ -6,4 +8,4 @@ class User extends Component {
   }
 }
 
-export default User
+export default withRouter(connect()(User))

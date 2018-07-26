@@ -7,9 +7,11 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Header from './Header'
 import SiderBar from './SiderBar'
 import Footer from './Footer'
+import NotFound from '../NotFound'
+
 import styles from './index.less'
 
-import { childRoutes } from '../../Route'
+import { childRoutes } from '@/routes'
 // import authHOC from '../../utils/auth'
 
 import { Layout } from 'antd'
@@ -63,10 +65,11 @@ class LayoutPage extends Component {
                   key={index}
                   path={route.path}
                   component={route.component}
-                  exactly={route.exactly}
+                  exact={route.exact}
                 />
               ))}
-              <Redirect to="/home" />
+              <Redirect exact from="/" to="/home" />
+              <Route render={NotFound} />
             </Switch>
             <Footer />
           </Content>

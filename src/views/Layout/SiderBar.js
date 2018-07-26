@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import styles from './index.less'
 import { allMenu } from '../../utils/menu'
@@ -100,4 +102,4 @@ SiderBar.propTypes = {
   darkTheme: PropTypes.bool
 }
 
-export default SiderBar
+export default withRouter(connect()(SiderBar))
