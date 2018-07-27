@@ -73,8 +73,8 @@ class LoginForm extends Component {
               Sign in
             </Button>
             <p>
-              <span>Username：guest</span>
-              <span>Password：guest</span>
+              <span>Username：admin</span>
+              <span>Password：any</span>
             </p>
           </Row>
         </Form>
