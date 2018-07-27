@@ -9,6 +9,7 @@ import App from './App'
 import rootReducer from './reducers'
 import './styles/index.css'
 import registerServiceWorker from './registerServiceWorker'
+import './mock' // mock
 
 const render = () => {
   ReactDOM.render(

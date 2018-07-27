@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
@@ -8,10 +9,10 @@ import Header from './Header'
 import SiderBar from './SiderBar'
 import Footer from './Footer'
 import NotFound from '../NotFound'
-
 import styles from './index.less'
 
 import { childRoutes } from '@/routes'
+import { signOut } from '@/actions/authAction'
 // import authHOC from '../../utils/auth'
 
 import { Layout } from 'antd'
@@ -33,8 +34,9 @@ class LayoutPage extends Component {
     this.setState({ collapsed: !this.state.collapsed })
   }
 
-  signOut = () => {
+  signout = () => {
     console.log('logout')
+    this.props.signOut()
   }
 
   render() {
@@ -56,7 +58,7 @@ class LayoutPage extends Component {
           <Header
             collapsed={this.state.collapsed}
             switchSider={this.switchSider}
-            signOut={this.signOut}
+            signOut={this.signout}
           />
           <Content className={styles.content}>
             <Switch>
@@ -79,4 +81,15 @@ class LayoutPage extends Component {
   }
 }
 
-export default withRouter(connect()(LayoutPage))
+const mapStateToProps = state => ({
+  isAuthenticated: state.authReducer.isAuthenticated
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({ signOut }, dispatch)
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(LayoutPage)
+)

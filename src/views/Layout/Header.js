@@ -42,7 +42,7 @@ class HeaderBar extends Component {
               }
             >
               <Menu.Item key="logout" onClick={signOut}>
-                <span onClick={signOut}>Sign out</span>
+                <span>Sign out</span>
               </Menu.Item>
             </SubMenu>
           </Menu>

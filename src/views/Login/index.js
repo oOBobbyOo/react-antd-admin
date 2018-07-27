@@ -14,8 +14,12 @@ class LoginForm extends Component {
         console.log('Received values of form: ', values)
 
         //TODO 登录
-        this.props.signIn()
-        this.props.history.push('/')
+        this.props.signIn(values)
+        setTimeout(() => {
+          if (this.props.isAuthenticated) {
+            this.props.history.push('/')
+          }
+        }, 1000)
       }
     })
   }
