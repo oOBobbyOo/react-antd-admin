@@ -16,7 +16,7 @@ class HeaderBar extends Component {
   }
 
   render() {
-    const { collapsed, switchSider, signOut } = this.props
+    const { collapsed, switchSider, signOut, user } = this.props
 
     return (
       <Header className={styles.header}>
@@ -37,7 +37,7 @@ class HeaderBar extends Component {
               title={
                 <span>
                   <Icon type="user" />
-                  <span>bobby</span>
+                  <span>{user.name}</span>
                 </span>
               }
             >
@@ -55,7 +55,8 @@ class HeaderBar extends Component {
 HeaderBar.propTypes = {
   collapsed: PropTypes.bool.isRequired,
   switchSider: PropTypes.func.isRequired,
-  signOut: PropTypes.func.isRequired
+  signOut: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired
 }
 
 export default connect()(HeaderBar)

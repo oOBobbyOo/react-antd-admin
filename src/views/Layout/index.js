@@ -59,6 +59,7 @@ class LayoutPage extends Component {
             collapsed={this.state.collapsed}
             switchSider={this.switchSider}
             signOut={this.signout}
+            user={this.props.user}
           />
           <Content className={styles.content}>
             <Switch>
@@ -82,7 +83,8 @@ class LayoutPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.authReducer.isAuthenticated
+  isAuthenticated: state.authReducer.isAuthenticated,
+  user: state.authReducer.user
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({ signOut }, dispatch)
