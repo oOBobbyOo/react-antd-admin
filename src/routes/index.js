@@ -4,6 +4,8 @@ import AuthenticatedRoute from '@/components/Authorized/AuthenticatedRoute'
 
 import Layout from '@/views/Layout'
 import Login from '@/views/Login'
+import NotAuth from '@/views/Errors/401'
+import NotFound from '@/views/Errors/404'
 
 import Home from '@/views/Home'
 import Iconfont from '@/views/UIElement/Iconfont'
@@ -39,6 +41,14 @@ export const childRoutes = [
   {
     path: '/charts/echarts',
     component: Echarts
+  },
+  {
+    path: '/errors/401',
+    component: NotAuth
+  },
+  {
+    path: '/errors/404',
+    component: NotFound
   }
 ]
 

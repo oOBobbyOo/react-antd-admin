@@ -8,7 +8,6 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Header from './Header'
 import SiderBar from './SiderBar'
 import Footer from './Footer'
-import NotFound from '../NotFound'
 import styles from './index.less'
 
 import { childRoutes } from '@/routes'
@@ -72,7 +71,6 @@ class LayoutPage extends Component {
                 />
               ))}
               <Redirect exact from="/" to="/home" />
-              <Route render={NotFound} />
             </Switch>
             <Footer />
           </Content>

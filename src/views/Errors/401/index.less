@@ -1,0 +1,63 @@
+@keyframes slideLeft {
+  0% {
+    transform: translatex(-60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translatex(60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+
+.errors {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .pic401 {
+    margin-top: -100px;
+    opacity: 0;
+    animation: slideLeft 0.5s linear forwards;
+  }
+
+  .oops {
+    margin-top: -100px;
+    margin-left: 150px;
+    opacity: 0;
+    animation: slideRight 0.5s linear forwards;
+
+    h1 {
+      font-size: 60px;
+      font-weight: 700;
+      color: #484848;
+      margin-top: 50px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #333;
+      margin-top: 30px;
+    }
+    button {
+      display: block;
+      margin-top: 20px;
+    }
+  }
+}

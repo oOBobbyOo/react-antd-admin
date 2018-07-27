@@ -46,13 +46,32 @@ export const allMenu = [
   {
     key: 'charts',
     name: '图表',
-    icon: 'table',
+    icon: 'pie-chart',
     children: [
       {
         key: 'echarts',
         name: 'Echarts',
         icon: 'area-chart',
         url: '/charts/echarts'
+      }
+    ]
+  },
+  {
+    key: 'errors',
+    name: '错误',
+    icon: 'question-circle-o',
+    children: [
+      {
+        key: '401',
+        name: '401',
+        icon: 'question-circle',
+        url: '/errors/401'
+      },
+      {
+        key: '404',
+        name: '404',
+        icon: 'exclamation-circle',
+        url: '/errors/404'
       }
     ]
   }
