@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CountUp from 'react-countup'
 import { Row, Col, Card, Icon } from 'antd'
 import styles from './index.less'
 
@@ -20,7 +21,15 @@ class NumberCard extends Component {
             />
             <div className={styles.container}>
               <p className={styles.title}>Online Review</p>
-              <span className={styles.number}>2,781</span>
+              <CountUp
+                className={styles.number}
+                start={0}
+                end={2781}
+                duration={2.75}
+                useEasing={true}
+                useGrouping={true}
+                separator=","
+              />
             </div>
           </Card>
         </Col>
@@ -33,7 +42,15 @@ class NumberCard extends Component {
             />
             <div className={styles.container}>
               <p className={styles.title}>Online Review</p>
-              <span className={styles.number}>2,781</span>
+              <CountUp
+                className={styles.number}
+                start={0}
+                end={3241}
+                duration={2.75}
+                useEasing={true}
+                useGrouping={true}
+                separator=","
+              />
             </div>
           </Card>
         </Col>
@@ -46,7 +63,15 @@ class NumberCard extends Component {
             />
             <div className={styles.container}>
               <p className={styles.title}>Online Review</p>
-              <span className={styles.number}>2,781</span>
+              <CountUp
+                className={styles.number}
+                start={0}
+                end={253}
+                duration={2.75}
+                useEasing={true}
+                useGrouping={true}
+                separator=","
+              />
             </div>
           </Card>
         </Col>
@@ -59,7 +84,15 @@ class NumberCard extends Component {
             />
             <div className={styles.container}>
               <p className={styles.title}>Online Review</p>
-              <span className={styles.number}>2,781</span>
+              <CountUp
+                className={styles.number}
+                start={0}
+                end={4324}
+                duration={2.75}
+                useEasing={true}
+                useGrouping={true}
+                separator=","
+              />
             </div>
           </Card>
         </Col>
