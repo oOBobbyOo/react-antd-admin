@@ -13,7 +13,7 @@ import styles from './index.less'
 
 import { childRoutes } from '@/routes'
 import { signOut } from '@/actions/authAction'
-// import authHOC from '../../utils/auth'
+// import authHOC from '../../utils/authHoc'
 
 import { Layout } from 'antd'
 const { Content } = Layout
@@ -70,7 +70,7 @@ class LayoutPage extends Component {
                     timeout={500}
                     classNames="fade"
                   >
-                    <Switch>
+                    <Switch location={location}>
                       {childRoutes.map((route, index) => (
                         <Route
                           key={index}
