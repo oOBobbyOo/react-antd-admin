@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
 import { Switch, Route, Redirect } from 'react-router-dom'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import Header from './Header'
 import SiderBar from './SiderBar'
@@ -61,17 +62,29 @@ class LayoutPage extends Component {
             user={this.props.user}
           />
           <Content className={styles.content}>
-            <Switch>
-              {childRoutes.map((route, index) => (
-                <Route
-                  key={index}
-                  path={route.path}
-                  component={route.component}
-                  exact={route.exact}
-                />
-              ))}
-              <Redirect exact from="/" to="/home" />
-            </Switch>
+            <Route
+              render={({ location }) => (
+                <TransitionGroup>
+                  <CSSTransition
+                    key={location.key}
+                    timeout={500}
+                    classNames="fade"
+                  >
+                    <Switch>
+                      {childRoutes.map((route, index) => (
+                        <Route
+                          key={index}
+                          path={route.path}
+                          component={route.component}
+                          exact={route.exact}
+                        />
+                      ))}
+                      <Redirect exact from="/" to="/home" />
+                    </Switch>
+                  </CSSTransition>
+                </TransitionGroup>
+              )}
+            />
             <Footer />
           </Content>
         </Layout>
